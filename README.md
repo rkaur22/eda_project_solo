@@ -1,6 +1,14 @@
-# ds-project-template
+# ds-project-EDA
 
-Template for creating ds simple projects
+Exploratory Data Analysis (EDA) project is done for a stakeholder, who is a Buyer and have some requirements in buying a house.
+Jennifer Montgomery is the name of the Buyer and have following requirements:
+- High budget, wants to show off, 
+- timing within a month, 
+- waterfront, 
+- renovated, and 
+- high grades year
+
+The goal of the project is to present the result of analysis to the Stakeholder that meets best of his buying criterias.
 
 ## Requirements
 
@@ -9,28 +17,13 @@ Template for creating ds simple projects
 
 ## Setup
 
-One of the first steps when starting any data science project is to create a virtual environment. For this project you have to create this environment from scratch yourself. However, you should be already familiar with the commands you will need to do so. The general workflow consists of... 
+One of the first steps when starting any data science project is to create a virtual environment. For this purpose you can use the following commands:
 
-* setting the python version locally to 3.9.8
-* creating a virtual environment using the `venv` module
-* activating your newly created environment 
-* upgrading `pip` (This step is not absolutely necessary, but will save you trouble when installing some packages.)
-* installing the required packages via `pip`
-
-At the end, you want to make sure that people who are interested in your project can create an identical environment on their own computer in order to be able to run your code without running into errors. Therefore you can create a `requirements file` and add it to your repository. You can create such a file by running the following command: 
-
-```bash
-pip freeze > requirements.txt
+```sh
+pyenv local 3.9.8
+python -m venv .venv
+source .venv/bin/activate
+pip install --upgrade pip
+pip install -r requirements.txt
 ```
-
-*Note: In rare case such a requirements file created with `pip freeze` might not ensure that another (especially M1 chip) user can install and execute it properly. This can happen if libraries need to be compiled (e.g. SciPy). Then it also depends on environment variables and the actual system libraries.*
-
-### Unit testing (Optional)
-
-If you write python scripts for your data processing methods, you can also write unit tests. In order to run the tests execute in terminal:
-
-```bash
-pytest
-```
-
-This command will execute all the functions in your project that start with the word **test**.
+The added [requirements file](requirements.txt) contains all libraries and dependencies we need to execute the linear regression notebooks.
